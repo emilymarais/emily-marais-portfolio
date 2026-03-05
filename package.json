@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npx serve -p 4000 ."
+  },
+  "dependencies": {
+    "agentation": "^2.2.1"
   }
 }
