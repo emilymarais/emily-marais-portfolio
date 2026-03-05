@@ -1,11 +1,16 @@
 import { Agentation } from 'agentation'
-import matter from 'gray-matter'
+import yaml from 'js-yaml'
 import './App.css'
+
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\n([\s\S]*?)\n---/)
+  return match ? yaml.load(match[1]) ?? {} : {}
+}
 
 // Load all project markdown files at build time
 const projectFiles = import.meta.glob('./content/projects/*.md', { as: 'raw', eager: true })
 const projects = Object.values(projectFiles)
-  .map(raw => matter(raw).data)
+  .map(parseFrontmatter)
   .filter(p => p.published)
 
 const SYMBOLS = [
