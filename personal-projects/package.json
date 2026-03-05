@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "cms": "npx decap-server",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "agentation": "^2.2.1",
+    "gray-matter": "^4.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
