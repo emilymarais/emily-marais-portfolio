@@ -1,0 +1,7 @@
+{
+  "name": "emily-marais-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve -p 4000 ."
+  }
+}
