@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Button Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: #111;
+      font-family: 'Spectral', serif;
+    }
+
+    .button--primary {
+      position: relative;
+      padding: 14px 32px;
+      background: #0d0d0d;
+      color: #fff;
+      border: none;
+      border-radius: 126px;
+      font-family: 'Spectral', serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -2px;
+      cursor: pointer;
+      isolation: isolate;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Animated image border */
+    .button--primary::before {
+      content: '';
+      position: absolute;
+      inset: -7px;
+      border-radius: 133px;
+      background-image: url(images/Claire\ Kayakking.png);
+      background-size: 300% 100%;
+      background-position: 0% center;
+      animation: border-pan 10s linear infinite;
+      z-index: -1;
+    }
+
+    /* Grain overlay */
+    .button--primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 126px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.07;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .button--primary:hover {
+      opacity: 0.85;
+    }
+
+    .button--primary:active {
+      opacity: 0.7;
+      transform: scale(0.98);
+    }
+
+    @keyframes border-pan {
+      0%   { background-position: 0% center; }
+      100% { background-position: 100% center; }
+    }
+
+    /* ── Labels ── */
+    label {
+      color: #555;
+      font-family: monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <label>default</label>
+  <button class="button--primary">Explore</button>
+</body>
+</html>

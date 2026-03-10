@@ -1,0 +1,47 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: experiment
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: case_studies
+    label: Case Studies
+    folder: src/case-studies
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Tagline, name: tagline, widget: text }
+      - { label: Date, name: project_date, widget: string }
+      - { label: Website URL, name: website_url, widget: string, required: false }
+      - { label: Website Label, name: website_label, widget: string, required: false }
+      - { label: OG Image, name: og_image, widget: image, required: false }
+      - label: Services (What I worked on)
+        name: services
+        widget: list
+        field: { label: Service, name: service, widget: string }
+      - label: Tools
+        name: tools
+        widget: list
+        field: { label: Tool, name: tool, widget: string }
+      - label: Hero Images
+        name: hero_images
+        widget: list
+        fields:
+          - { label: Image, name: src, widget: image }
+          - { label: Alt Text, name: alt, widget: string }
+      - label: Content Sections
+        name: sections
+        widget: list
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Body, name: body, widget: text }
+          - { label: Image, name: image_src, widget: image, required: false }
+          - { label: Image Alt, name: image_alt, widget: string, required: false }
+          - { label: Video URL (.mp4), name: video_url, widget: string, required: false }
+          - { label: Video URL (.webm), name: video_url_webm, widget: string, required: false }
+          - { label: Video Poster Image, name: video_poster, widget: image, required: false }
