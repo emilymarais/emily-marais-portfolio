@@ -5,6 +5,11 @@ project_date: August 2025
 website_url: https://www.legendsgolftours.com
 website_label: www.legendsgolftours.com
 og_image: /images/LGT-Mobile-Cover-Final-HQ.png
+card_image: images/LGT-Cover-Final_1.avif
+card_image_mobile: images/LGT-Mobile-Cover-Final_1.avif
+card_image_alt: "A preview of the website I designed and developed for Legends Golf Tours, featuring Gary Player's tour"
+order: 1
+has_case_study: true
 services:
   - Branding
   - Web design
