@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: emilymarais/emily-marais-portfolio
   branch: main
 
 media_folder: images
